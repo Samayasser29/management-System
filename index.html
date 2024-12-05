@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Management System</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-white mt-3 mb-4">Product Management System</h1>
+    <div class="w-75 mx-auto">
+        <div class="form-floating mb-3">
+            <input type="text" oninput="validationInput(this)" class="form-control " id="productName" placeholder="Product Name">
+            <div class="alert alert-danger p-1 mt-1 d-none">
+                <small class="p-2">invalid name</small>
+            </div>
+            <label for="productName">Product Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" oninput="validationInput(this)" class="form-control" id="ProductPrice" placeholder="Product Price">
+            <div class="alert alert-danger p-1 mt-1 d-none">
+                <small class="p-2">invalid price</small>
+            </div>
+            <label for="ProductPrice">Product Price</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input list="categories" oninput="validationInput(this)" type="text" class="form-control" id="productCategory" placeholder="Product Category">
+            <div class="alert alert-danger p-1 mt-1 d-none">
+                <small class="p-2">invalid Category</small>
+            </div>
+            <label for="productCategory">Product Category</label>
+            <datalist id="categories" >
+                <option value="TV"></option>
+                <option value="Mobile"></option>
+                <option value="Laptop"></option>
+                <option value="Screens"></option>
+                <option value="Other"></option>
+            </datalist>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea  class="form-control" oninput="validationInput(this)" id="ProductDescription" placeholder="Product Description"></textarea>
+            <div class="alert alert-danger p-1 mt-1 d-none">
+                <small class="p-2">invalid Description</small>
+            </div>
+            <label for="ProductDescription">Product Description</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="ProductImage" placeholder="Product Image">
+            <label for="ProductImage">Product Image</label>
+          </div>
+
+          <button id="addBtn" disabled onclick="addProduct()" class="btn btn-primary">Add Product</button>
+          <button id="updateBtn" onclick="updateProduct()" class="btn btn-outline-primary d-none">Update Product</button>
+
+    </div>
+    <div class="container mt-4 w-75 p-0">
+        <div class="form-floating mb-3">
+            <input type="text" oninput="search(this.value)" class="form-control" id="search" placeholder="Search">
+            <label for="search">Search</label>
+          </div>
+    </div>
+    <div class="container mt-5 mb-5 w-75">
+        <div class="row g-3 " id="myData">
+            
+        </div>
+    </div>
+  </div>
+    
+
+
+
+
+
+
+
+
+   <script src="./js/bootstrap.bundle.js"></script>
+   <script src="./js/main.js"></script> 
+</body>
+</html>
